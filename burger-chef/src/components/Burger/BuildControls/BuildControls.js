@@ -9,8 +9,13 @@ const controls = [
     { label: 'Meat', type: 'meat' }
 ];
 
+function outputPrice(amount) {
+    return Number.parseFloat(amount).toFixed(2);
+};
+
 const buildControls = ( props ) => (
     <div className={classes.BuildControls}>
+        <p>Current Price: ${outputPrice(props.price)} </p>
         { controls.map(ctrl => (
             <BuildControl
                 key={ctrl.label}  label={ctrl.label}
